@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <title>Steam store games</title>
+</head>
+<body>
+
+<!--This is a pre-defined navbar template taken from: https://getbootstrap.com/docs/4.4/components/navbar/ -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">STEAM STORE TOP SELLING!!!</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
+            </div>
+        </div>
+    </nav>
+
+<!--This is a pre-defined jumbotron template taken from: https://getbootstrap.com/docs/4.4/components/jumbotron/ -->
+    <div class="container mt-4">
+        <div class="jumbotron" style="text-align: center;">
+          <h1 class="display-4">Top 50 games from steam store</h1>
+          <p class="lead">scraped from the steam store website</p>
+          <hr class="my-4">
+          <p class="lead">
+            <a class="btn btn-primary btn-lg" href="https://github.com/Musab005/SteamStore" role="button">Github</a>
+          </p>
+        </div>
+    </div>
+
+
+    <div class='container'>
+        {% for game in games %}
+            {% if loop.index0 % 3 == 0 %}
+                <div class = "row justify-content-center mt-4 mb-4">
+            {% endif %}
+                    <!--This is a pre-defined card template taken from: https://getbootstrap.com/docs/4.4/components/card/ -->
+                    <div class="card mr-4" style="width: 18rem; text-align: center;">
+                      <img src="{{game.get('image_url')}}" class="card-img-top">
+                      <div class="card-body">
+                        <h5 class="card-title">{{game.get('game_name')}}</h5>
+                        <p class="card-text">Supported platforms: {{game.get('platform')}}</p>
+                          <p class="card-text">Price: {{game.get('final_price')}}</p>
+                        <a href="{{game.get('game_url')}}" class="btn btn-primary">Link</a>
+                      </div>
+                    </div>
+
+                    {% if loop.index0 % 3 == 2 %}
+                </div>
+                    {% endif %}
+
+        {% endfor %}
+    </div>
+
+</body>
+</html>
