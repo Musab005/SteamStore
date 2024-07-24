@@ -6,5 +6,5 @@ To run this project in real time:
 2) Install scrapyrt: `pip install scrapyrt`
 3) Install flask: `conda install flask -y`
 4) Change directory on the terminal to the web folder in this project
-5) Run "scrapyrt" on the terminal
-6) Run "python .\app.py" on the terminal
+5) Run `scrapyrt` on the terminal
+6) Run `python .\app.py` on the terminal
