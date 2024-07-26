@@ -1,5 +1,5 @@
 # SteamStore
-A web scraping project that scrapes the top 50 most selling games from the steam store website and displays it on the web using Flask with Bootstrap and Scrapyrt (You send a request to ScrapyRT with spider name and URL, and in response, you get items collected by a spider visiting this URL).
+A web scraping project that scrapes the top 50 most selling games from the steam store website and displays it on the web using Flask with Bootstrap and Scrapyrt (i.e. Client sends a request to ScrapyRT with spider name and URL, and in response, you get items collected by a spider visiting this URL).
 
 To run this project in real time:
 1) Activate the anaconda virtual environment: `conda activate {virtual env name}`
