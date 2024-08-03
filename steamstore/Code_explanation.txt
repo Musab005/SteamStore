@@ -36,5 +36,6 @@ in the `app.py` file.
 The working of the web app is that you execute your spider with scrapyrt and display the response as a web app
 using Flask.
 
+Bootstrap css files are included in the static folder
 
 

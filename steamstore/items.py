@@ -24,6 +24,7 @@ def clean_html(item):
         cleaned_item = "No review"
     return cleaned_item
 
+
 def clean_spaces(item):
     try:
         cleaned_item = item.strip()

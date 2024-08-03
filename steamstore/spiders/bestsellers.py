@@ -10,11 +10,12 @@ class BestsellersSpider(scrapy.Spider):
 
 
     def parse(self, response):
-        # write xpath of container of all games and hence loop over games
+
+        # container of games
         games_container = response.xpath('//div[@id="search_resultsRows"]/a')
+
         for game in games_container:
             loader = ItemLoader(item=SteamstoreItem(), selector=game, response=response)
-            print("\n \n")
             loader.add_xpath('game_url', './/@href')
             loader.add_xpath('image_url', './/div[@class="col search_capsule"]/img/@src')
             loader.add_xpath('game_name', './/div[@class="col search_name ellipsis"]/span/text()')
